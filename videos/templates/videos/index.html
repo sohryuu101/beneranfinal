@@ -1,0 +1,100 @@
+{% extends 'videos/base.html' %}
+
+{% block content %}
+	<div class="container-fluid bg-pink-blue min-vh-100">
+		<div class="row">	
+			<div class="text-wrapper col-lg-6 col-sm-12 text-white order-lg-1 wrap1">
+				<h1>Happy birthday, ra!</h1>
+				<div>
+					<p style="text-align: justify;"> Selamat bertambah umur yang ke-20, ra. Semoga panjang umur, sehat selalu, bisa membahagiakan orang tua, 
+						semangat lagi belajarnya, gapai cita-cita, pokoknya semua yang terbaik untukmu dan semoga apa yang disemogakan lekas tersemogakan. Aamiin.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-sm-12 text-center order-lg-2">
+				<img src="media/pictures/pict2.gif" class="gif">
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-blue-gray vh-100">
+		<div class="row">
+			<div class="text-wrapper col-lg-6 col-sm-12 text-white order-lg-2 wrap2">
+					<h1>Tak lupa juga,</h1>
+					<h1 class="pt-0">selamat tanggal 15!</h1>
+					<div class="col-md-12">
+						<p style="text-align: justify;"> Bersamaan juga dengan tanggal 15-an kita yang ke-8 ini. Terhitung 245 hari kita lewati bersama dan masih banyak
+							hari-hari dengan cerita berbeda yang akan kita untai satu-persatu kedepannya setiap hari. Pasti kamu juga penasaran kan ceritanya gimana? So, stay with me till the end, ya!
+						</p>
+					</div>
+			</div>
+			<div class="col-lg-6 col-sm-12 text-center order-lg-1">
+				<img src="media/pictures/pict1.png" style="max-width: 45vw;" class="calendar">
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-pink-grad min-vh-100">
+		<div class="text-wrapper text-white text-center">
+			<h1>Our story</h1>
+			<div class="row row-cols-1 row-cols-md-3 g-4 px-3 text-dark">
+				<div class="col">
+					<div class="card bg-transparent border-0 card-el-1">
+					<img src="media/pictures/pict3.svg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">First Date</h5>
+						<p class="card-text">For the very first time we had a date, a long awaited date 'cause we finaly met. Not a fancy one.
+						we took photos in front of rektorat, a .... in UI. For the very first time we had a date, a long awaited date 'cause we finaly met. Not a fancy one.
+						we took photos in front of rektorat, a .... in UI.
+						</p>
+					</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card bg-transparent border-0 card-el-2">
+					<img src="media/pictures/pict4.svg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Trampoline Date</h5>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						This is a longer card with supporting text below as a natural lead-in to additional content.
+						</p>
+					</div> 
+					</div>
+				</div>
+				<div class="col">
+					<div class="card bg-transparent border-0 card-el-3">
+					<img src="media/pictures/pict5.svg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Haunted House Date</h5>
+						<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+						This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+						This is a longer card with supporting text below as a natural lead-in to additional content.
+						</p>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center my-0">
+				<img src="media/pictures/pict7.png" style="max-width: 90vw;">
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-blue-grad vh-100">
+		<div class="text-wrapper col-lg-8 text-white">
+				<h1>What Others Says</h1>
+				<p >Video dari orang-orang yang (mungkin) kamu kenal</p>
+		</div>
+	</div>
+	<div class="container-fluid bg-pink-grad-v2 vh-100">
+		<div class="text-wrapper text-white text-center">
+			<h1>Sends Birthday Wishes!</h1>
+			<p> Kamu bisa isi form berikut yang hasilnya nanti bisa tiara baca! </p>
+			<form method="POST" action="{% url 'send_email' %}">
+				{% csrf_token %}
+				<label for="name">Your Name:</label>
+				<input type="text" id="name" name="name" required>
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" required></textarea>
+				<button type="submit">Send Birthday Card</button>
+			</form>
+		</div>
+	</div>
+{% endblock content %}

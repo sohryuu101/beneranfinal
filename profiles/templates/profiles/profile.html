@@ -1,0 +1,31 @@
+{% extends 'videos/base.html' %}
+
+{% block content %}
+<div class="container-fluid bg-dark min-vh-100">
+    <div class="row justify-content-center">
+        <div class="card col-md-6 col-sm-12 col-xs-12 d-flex flex-row align-items-center p-3 shadow rounded bg-dark">
+            <img class="rounded-circle mr-4" height="150" width="150" src="{{ profile.image.url }}">
+            <div class="row ms-3">
+                <h1 class="text-white">{{ profile.user.username }}</h1>
+                <h5 class="text-white" style="font-size: 18px;">Name: {{ profile.name }}</h5>
+                <h5 class="text-white" style="font-size: 18px;">Location: {{ profile.location }}</h5>
+            </div>
+            <button class="btn btn-outline-info btn-block rounded-pill position-absolute bottom-0 end-0 m-3"><a class="text-white" href="{% url 'account_logout' %}" style="text-decoration: none; font-size: 14px;">Sign Out</a></button>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        {% for video in videos %}
+        {% if video.uploader == profile.user %}
+        <div class="card col-md-3 col-sm-12 mr-md-2 mt-5 p-3 bg-dark border-0" style="width: 18rem;">
+            <a href="{% url 'video-detail' object.pk %}"><img src="/media/{{ object.thumbnail }}" width="256" height="144" class="card-image-top rounded"></a>
+            <div class="card-body">
+                <a class="link-text text-white" href="{% url 'video-detail' object.pk %}"><h5 class="text-center m-0" style="font-size: 18px;">{{ object.title }}</h5></a>
+                <p class="text-muted text-center m-0" style="font-size: 14px;">{{ object.uploader }}</p>
+                <p class="text-muted text-center m-0" style="font-size: 14px;">{{ object.date_posted | date:"M d, Y" }}</p>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "account/base_manage.html" %}
+{% load allauth i18n %}
+{% block head_title %}
+    {% trans "Sign Out" %}
+{% endblock head_title %}
+{% block content %}
+    <div class="row col-md-8 col-sm-12 col-xs-12 mt-5">
+        <h1 class="text-white">Sign Out</h1>
+        <p class="text-white">Are you sure you want to sign out?</p>
+    </div>
+    {% url 'account_logout' as action_url %}
+    {% element form method="post" action=action_url no_visible_fields=True %}
+        {% slot body %}
+            {% csrf_token %}
+            {% if redirect_field_value %}
+                <input type="hidden"
+                       name="{{ redirect_field_name }}"
+                       value="{{ redirect_field_value }}" />
+            {% endif %}
+        {% endslot %}
+        {% slot actions %}
+        <button class="btn btn-outline-info btn-block rounded-pill">
+            <a class="text-white" href="{% url 'profile' user.profile.pk %}" style="text-decoration: none; font-size: 14px;">Back</a>
+        </button>
+        <button class="btn btn-primary btn-block ms-5 rounded-pill" type="submit">
+            <a class="text-white" style="text-decoration: none; font-size: 14px;">Sign Out</a>
+        </button>
+        {% endslot %}
+    {% endelement %}
+{% endblock content %}

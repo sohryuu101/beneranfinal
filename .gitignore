@@ -1,0 +1,8 @@
+ECHO is on.
+# .gitignore
+
+# Python virtual environment
+env/
+credentials.json
+token.json
+```

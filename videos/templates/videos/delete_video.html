@@ -1,0 +1,21 @@
+{% extends 'videos/base.html' %}
+
+{% block content %}
+
+	<div class="container-fluid bg-dark min-vh-100">
+		<div class="row justify-content-center">
+			<div class="col-md-6 col-sm-12 col-xs-12 text-center">
+				<form method="POST">
+					{% csrf_token %}
+					<legend class="mb-4 text-white">Delete Video</legend>
+					<h5 class="text-white">Are You Sure?</h5>
+					<p class="text-white">This will delete the video forever.  This cannot be undone.</p>
+					<button class="btn btn-danger btn-block rounded-pill" type="submit">
+						<a class="text-white" style="text-decoration: none; font-size: 14px;">Delete</a>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+{% endblock content %}
