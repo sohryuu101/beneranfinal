@@ -25,3 +25,7 @@ let observer = new IntersectionObserver(function(entries) {
 elements.forEach(element => {
     observer.observe(element);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const player = new Plyr('.plyr');
+});

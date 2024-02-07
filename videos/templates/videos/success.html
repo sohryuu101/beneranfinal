@@ -2,7 +2,14 @@
 
 {% block content %}
 
-<h1>Success</h1>
-<a href="{% url 'index' %}">Back to home</a>
+<div class="container-fluid bg-pink-blue min-vh-100">
+    <div class="row">
+        <div class="text-wrapper col-lg-6 col-sm-12 text-white success">
+            <h1>Success</h1>
+            <p>Terima kasih atas ucapannya, ya! Sehat dan sukses selalu!</p>
+            <button class="btn btn-info btn-block rounded-pill position-absolute"><a class="text-white" href="{% url 'index' %}" style="text-decoration: none; font-size: 0.9rem;">Back to Home</a></button>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}

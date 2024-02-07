@@ -140,6 +140,9 @@ footer {
     p {
         font-size: 0.6rem;
     }
+    button {
+        font-size: 0.6rem !important;
+    }
     .gif {
         margin: 2rem 2rem 0 2rem;
     }
@@ -181,9 +184,12 @@ footer {
     p {
         font-size: 0.8rem;
     }
+    button {
+        font-size: 0.8rem !important;
+    }
     .gif {
         margin: 5rem;
-        max-width: 70%;
+        max-width: 80%;
     }
     .wrap1 {
         padding: 5rem 3rem 0 5rem !important; 
@@ -223,8 +229,11 @@ footer {
     p {
         font-size: 0.8rem;
     }
+    button {
+        font-size: 0.8rem !important;
+    }
     .gif {
-        margin: 6rem 3rem 0 0;
+        margin: 6rem 3rem 0 3rem;
     }
     .wrap1 {
         padding: 3rem 1rem 0 5rem !important; 
@@ -259,6 +268,9 @@ footer {
     p {
         font-size: 0.9rem;
     }
+    button {
+        font-size: 0.9rem !important;
+    }
     .wrap1 {
         padding: 5rem 1rem 0 5rem !important; 
     }
@@ -276,6 +288,14 @@ footer {
     }
     .navbar-brand {
         padding-left: 4.5rem;
+    }
+    .success {
+        padding: 5rem !important;
+    }
+    .plyr {
+        border-radius: 0.5rem;
+        width: auto;
+        max-height: 50vh;
     }
 }
 
