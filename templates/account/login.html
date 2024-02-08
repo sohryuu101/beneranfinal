@@ -8,8 +8,6 @@
 {% block content %}
 <div class="row col-md-8 col-sm-12 col-xs-12 mt-5">
     <h1 class="text-white">Sign In</h1>
-    <p class="text-white">If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.</p>
 </div>
     {% url 'account_login' as login_url %}
     {% element form form=form method="post" action=login_url tags="entrance,login" %}

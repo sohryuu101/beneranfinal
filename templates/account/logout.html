@@ -19,10 +19,7 @@
             {% endif %}
         {% endslot %}
         {% slot actions %}
-        <button class="btn btn-outline-info btn-block rounded-pill">
-            <a class="text-white" href="{% url 'profile' user.profile.pk %}" style="text-decoration: none; font-size: 14px;">Back</a>
-        </button>
-        <button class="btn btn-primary btn-block ms-5 rounded-pill" type="submit">
+        <button class="btn btn-primary btn-block rounded-pill" type="submit">
             <a class="text-white" style="text-decoration: none; font-size: 14px;">Sign Out</a>
         </button>
         {% endslot %}

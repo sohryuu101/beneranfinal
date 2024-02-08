@@ -1,6 +1,30 @@
 {% extends 'videos/base.html' %}
-
 {% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="container-fluid bg-dark min-vh-100">
+    <div class="row justify-content-center">
+        {% if object_list %}
+            {% for object in object_list %}
+            <div class="card col-md-3 col-sm-12 mr-md-2 mt-5 p-3 border-0 bg-transparent">
+                <a href="{% url 'video-detail' object.pk %}"><img src="/media/{{ object.thumbnail }}" width="256" height="144"></a>
+                <div class="card-body bg-transparent">
+                    <a class="link-text" href="{% url 'video-detail' object.pk %}"><h5 class="text-center">{{ object.title }}</h5></a>
+                    <p class="text-muted text-center m-0">{{ object.uploader }}</p>
+                    <p class="text-muted text-center">{{ object.date_posted | date:"M d, Y" }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-12 pt-5 text-center">
+                <h1 class="text-white">There are no videos yet.</h1>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{% else %}
 	<div class="container-fluid bg-pink-blue min-vh-100">
 		<div class="row">	
 			<div class="text-wrapper col-lg-6 col-sm-12 text-white order-lg-1 wrap1">
@@ -47,7 +71,7 @@
 						<p class="card-text">Date pertama kita!!! dan baru pertama kali ketemu setelah menanti sekian lama.
 							Aku ngerasa canggung waktu itu karena ga pernah jalan sama cwk sekalinya jalan langsung yang cakep hehe. Pertama, kita fotbar 
 							dulu di rektorat (ga afdol klo ga foto). Terus kita ke ragunan jalan-jalan sama naik sepeda yang berdua--yang bikin kaki aku pegel karena pas tanjakan berat. Kesampean juga liat kapibara di ragunan
-							terus aku dimirip-miripin sama kamu sampe sekarang. Dari ragunan kita cari mam ke blok-m waktu itu mau ke Futago Ya sama Kashiwa (?) tapi ternyata rame banget jadi akhirnya kita makan hokben aja karena 
+							terus aku dimirip-miripin sama kamu sampe sekarang. Dari ragunan kita cari mam ke blok-m waktu itu mau ke resto inceran tapi ternyata rame banget jadi akhirnya kita makan hokben aja karena 
 							buru-buru mau ke foto booth. Duduk-duduk sebentar sampe maghrib di Taman Literasi terus pulang ke Depok. Sebelum ke kos kita ke bilik meng (kucing). Tapi, waktu itu aku udah kecapean jadi ga lama sama aku harus pulang 
 							juga ke Bandung besoknya karena masih ada urusan.
 						</p>
@@ -127,14 +151,18 @@
 			<div class="text-wrapper col-lg-6 col-sm-12 text-white order-lg-1 wrap1">
 				<h1>Akhir Kata</h1>
 				<div>
-					<p style="text-align: justify;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis aut est deserunt vel alias vitae iusto aspernatur deleniti necessitatibus adipisci, ut ipsum mollitia, fugit dolorem nihil nulla sequi quas. Dignissimos.
-
+					<p style="text-align: justify;">Selagi membuat ini, aku jadi banyak teringat banyak kenangan manis waktu kita dekat. Semoga kita
+						bisa bertahan dengan jarak ini yang nantinya bisa jadi selalu dekat. Untuk pembaca lainnya, terima kasih udah menyimak cerita kita. Terima kasih yang telah berpartisipasi dalam video ini.
+						Aku minta maaf bila masih banyak kekurangan terutama untuk website ini (toh, apa yag diharapkan dari desain anak teknik 
+						dan yang cuma andelin AI buat programmnya ini?). Terakhir, coba login dulu ya, sayang ada secret content buat kamu hihi :D (ada di pojok kanan atas navbar)
+						Bubum sayang banget sama mawmaw.
 					</p>
 				</div>
 			</div>
-			<div class="col-lg-6 col-sm-12 text-center order-lg-2">
-				<!-- disini gambar -->
+			<div class="col-lg-6 col-sm-12 order-lg-2">
+				<!-- gambar -->
 			</div>
 		</div>
 	</div>
+{% endif %}
 {% endblock content %}

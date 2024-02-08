@@ -115,11 +115,6 @@ html {
     scroll-behavior: smooth;
 }
 
-footer {
-    background: rgb(148,187,233);
-    background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(148,187,233,1) 100%); 
-}
-
 .gif {
     border-radius: 0.5rem; 
     max-width: 85%;
@@ -127,9 +122,13 @@ footer {
 
 .card-body {
     background-color: rgba(255, 255, 255, 0.6);
-    padding: 15px;
     border-radius: 0.5rem;
     max-width: 400px;
+}
+
+.bg-navbar-blue {
+    background: rgb(33,116,241);
+    background: linear-gradient(129deg, rgba(33,116,241,1) 0%, rgba(33,116,241,1) 100%);
 }
 
 /* Responsive font size adjustments based on device width */
@@ -199,7 +198,7 @@ footer {
     }
     .card-img-top {
         border-radius: 0.5rem; 
-        max-width: 450px;
+        max-width: 400px;
         height: auto;
     }
     .card-el-1 {
@@ -256,7 +255,7 @@ footer {
     }
     .card-img-top {
         border-radius: 0.5rem; 
-        max-width: 450px;
+        max-width: 400px;
         height: auto;
     }
 }
@@ -296,6 +295,11 @@ footer {
         border-radius: 0.5rem;
         width: auto;
         max-height: 50vh;
+    }
+    .card-img-top {
+        border-radius: 0.5rem; 
+        max-width: 400px;
+        height: auto;
     }
 }
 
