@@ -2,9 +2,9 @@
   <div class="container-fluid my-auto">
     <a class="navbar-brand text-white" href="{% url 'index' %}"><img src="media/pictures/maung.svg" class="pe-2" style="height: 2rem;">MawMaw</a>
     {% if user.is_authenticated %}
-    <a class="text-white pe-5" href="{% url 'account_logout' %}" style="text-decoration: none; font-size: 14px;">Logout</a>
+    <a class="text-white pe-5" href="{% url 'account_logout' %}" style="text-decoration: none;">Logout</a>
     {% else %}
-    <a class="text-white pe-5" href="{% url 'account_login' %}" style="text-decoration: none; font-size: 14px;">Login</a>
+    <a class="text-white pe-5" href="{% url 'account_login' %}" style="text-decoration: none;">Login</a>
     {% endif %}
   </div>
 </nav>

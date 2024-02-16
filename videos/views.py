@@ -20,7 +20,7 @@ def send_email(request):
         
         if service:
             email_content = f'Name: {name}\nMessage: {message}'
-            message = create_message("sohryuuasuka@gmail.com", "akbarfebry111@gmail.com", "Happy Birthday!", email_content)
+            message = create_message("sohryuuasuka@gmail.com", "mutiaraqamiliah4@gmail.com", "Happy Birthday!", email_content)
             send_message(service, 'me', message)
             
     return redirect('success')

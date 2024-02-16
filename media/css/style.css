@@ -131,12 +131,22 @@ html {
     background: linear-gradient(129deg, rgba(33,116,241,1) 0%, rgba(33,116,241,1) 100%);
 }
 
+.plyr {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+}
+
 /* Responsive font size adjustments based on device width */
 @media only screen and (max-width: 767px) {
     h1 {
         font-size: 2rem;
     }
     p {
+        font-size: 0.6rem;
+    }
+    a {
         font-size: 0.6rem;
     }
     button {
@@ -174,6 +184,9 @@ html {
         justify-content: center;
         align-items: center;
     }
+    .video-con {
+        padding: 2rem 5rem 2rem 5rem !important;
+    }
     .maung-banyak {
         margin: 3rem !important;    
         max-width: 70vw;
@@ -185,6 +198,9 @@ html {
         font-size: 2rem;
     }
     p {
+        font-size: 0.8rem;
+    }
+    a {
         font-size: 0.8rem;
     }
     button {
@@ -218,6 +234,9 @@ html {
         padding-left: 4rem;
         font-size: 0.9rem !important;
     }
+    .video-con {
+        padding: 5rem 15rem 5rem 15rem !important;
+    }
     .calendar {
         max-width: 30%;
         height: auto;
@@ -234,6 +253,9 @@ html {
         font-size: 3rem;
     }
     p {
+        font-size: 0.8rem;
+    }
+    a {
         font-size: 0.8rem;
     }
     button {
@@ -266,6 +288,12 @@ html {
         max-width: 400px;
         height: auto;
     }
+    .video-con {
+        padding: 5rem 5rem 5rem 5rem !important;
+    }
+    .video-title {
+        padding-top: 10rem;
+    }
     .maung-banyak {
         margin: 6rem 0 0 0 !important;
         max-width: 40vw;
@@ -277,6 +305,9 @@ html {
         font-size: 4rem;
     }
     p {
+        font-size: 0.9rem;
+    }
+    a {
         font-size: 0.9rem;
     }
     button {
@@ -303,10 +334,11 @@ html {
     .success {
         padding: 5rem !important;
     }
-    .plyr {
-        border-radius: 0.5rem;
-        width: auto;
-        max-height: 50vh;
+    .video-con {
+        padding: 5rem 10rem 5rem 10rem !important;
+    }
+    .video-title {
+        padding-top: 10rem;
     }
     .card-img-top {
         border-radius: 0.5rem; 
