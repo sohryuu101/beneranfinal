@@ -9,6 +9,7 @@ from .forms import CommentForm
 from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from gmail import gmail_service, create_message, send_message
+from django.contrib.auth import authenticate, login
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
@@ -27,6 +28,21 @@ def send_email(request):
             
     return redirect('success')
 
+@csrf_exempt
+def login_view(request):
+    if request.method == 'POST':
+        # Your login logic here
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return redirect('index')
+    else:
+        # Render the login form
+        return render(request, 'videos/login.html')
+        
 def success_view(request):
     return render(request, 'videos/success.html')
 

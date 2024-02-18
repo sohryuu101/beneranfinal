@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import CreateVideo, DetailVideo, UpdateVideo, DeleteVideo, VideoCategoryList, SearchVideo, send_email, success_view
+from .views import CreateVideo, DetailVideo, UpdateVideo, DeleteVideo, VideoCategoryList, SearchVideo, send_email, success_view, login_view
 
 urlpatterns = [
     path('create/', CreateVideo.as_view(), name='video-create'),
@@ -11,4 +11,5 @@ urlpatterns = [
     path('search/', SearchVideo.as_view(), name='video-search'),
     path('send/', send_email, name='send_email'),
     path('success/', success_view, name='success'),
+    path('login/', login_view ,name='login')
 ]
