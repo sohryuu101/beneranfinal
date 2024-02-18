@@ -5,4 +5,5 @@ ECHO is on.
 env/
 credentials.json
 token.json
+.env
 ```
