@@ -6,11 +6,13 @@ from django.views.generic.list import ListView
 from django.views import View
 from .models import Video, Comment, Category
 from .forms import CommentForm
+from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse
 from gmail import gmail_service, create_message, send_message
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
+@csrf_exempt
 def send_email(request):
     if request.method == 'POST':
         name = request.POST.get('name')
